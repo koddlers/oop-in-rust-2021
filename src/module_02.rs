@@ -34,6 +34,13 @@ pub mod geometry {
     }
 
     impl Rectangle {
+        pub fn new(width: u32, height: u32) -> Self {
+            Self {
+                width,
+                height
+            }
+        }
+
         pub fn area(&self) -> u32 {
             self.width * self.height
         }
@@ -48,6 +55,9 @@ pub mod creating_objects_in_rust_v2 {
             width: 50,
             height: 60,
         };
-        println!("Area of the rectangle is (before): {}", rect.area());
+        println!("Area of the rectangle is: {}", rect.area());
+
+        let mut rect_2 = geometry::Rectangle::new(200, 400);
+        println!("Area of the rect_2 is: {}", rect_2.area());
     }
 }
