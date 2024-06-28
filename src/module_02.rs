@@ -26,3 +26,28 @@ pub mod creating_objects_in_rust {
         println!("Area of the rectangle is (after): {}", rect.area());
     }
 }
+
+pub mod geometry {
+    pub struct Rectangle {
+        pub width: u32,
+        pub height: u32,
+    }
+
+    impl Rectangle {
+        pub fn area(&self) -> u32 {
+            self.width * self.height
+        }
+    }
+}
+
+pub mod creating_objects_in_rust_v2 {
+    use crate::module_02::geometry;
+
+    pub fn demo_visibility_of_objects_and_their_parts_inside_modules() {
+        let mut rect = geometry::Rectangle {
+            width: 50,
+            height: 60,
+        };
+        println!("Area of the rectangle is (before): {}", rect.area());
+    }
+}
